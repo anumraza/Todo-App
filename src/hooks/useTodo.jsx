@@ -1,15 +1,12 @@
 import { useState, useEffect } from 'react';
 
 export const useTodo = () => {
-  const [tasks, setTasks] = useState([
-    { id: 1, title: "Repair the faucet", completed: false },
-    { id: 2, title: "Write a letter", completed: false },
-    { id: 3, title: "Buy groceries", completed: true }
-  ]);
+  const [tasks, setTasks] = useState([]); // Start with an empty array
 
   const [completedTasks, setCompletedTasks] = useState(0);
 
   useEffect(() => {
+    // Calculate the number of completed tasks whenever `tasks` changes
     const completedCount = tasks.filter(task => task.completed).length;
     setCompletedTasks(completedCount);
   }, [tasks]);
