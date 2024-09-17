@@ -24,6 +24,6 @@ export const useTodo = () => {
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id));
   };
-
+  
   return { tasks, completedTasks, addTask, toggleTask, deleteTask };
 };
